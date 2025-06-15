@@ -1,0 +1,191 @@
+{
+  "templates": {
+    "default": {
+      "name": "開発チーム",
+      "description": "ソフトウェア開発向けの標準チーム構成",
+      "leader": {
+        "role": "PRESIDENT",
+        "title": "プロジェクト統括責任者",
+        "instruction": "president.md"
+      },
+      "manager": {
+        "role": "boss",
+        "title": "チームリーダー",
+        "instruction": "boss.md"
+      },
+      "workers": [
+        {
+          "role": "worker",
+          "title": "実行担当者",
+          "instruction": "worker.md"
+        }
+      ]
+    },
+    "publishing": {
+      "name": "出版チーム",
+      "description": "小説・書籍制作向けチーム",
+      "leader": {
+        "role": "Publisher",
+        "title": "AI社長",
+        "instruction": "publisher.md"
+      },
+      "manager": {
+        "role": "Editor",
+        "title": "AI編集者",
+        "instruction": "editor.md"
+      },
+      "workers": [
+        {
+          "role": "Novelist",
+          "title": "AI小説家",
+          "instruction": "novelist.md"
+        }
+      ]
+    },
+    "design": {
+      "name": "デザインチーム",
+      "description": "Webデザイン・UI/UX制作向けチーム",
+      "leader": {
+        "role": "CEO",
+        "title": "AI社長",
+        "instruction": "ceo-design.md"
+      },
+      "manager": {
+        "role": "DesignManager",
+        "title": "AIデザインマネージャー",
+        "instruction": "design-manager.md"
+      },
+      "workers": [
+        {
+          "role": "WebDesigner",
+          "title": "AIWebデザイナー",
+          "instruction": "web-designer.md"
+        }
+      ]
+    },
+    "marketing": {
+      "name": "マーケティングチーム",
+      "description": "マーケティング・広告制作向けチーム",
+      "leader": {
+        "role": "CMO",
+        "title": "AIマーケティング責任者",
+        "instruction": "cmo.md"
+      },
+      "manager": {
+        "role": "MarketingManager",
+        "title": "AIマーケティングマネージャー",
+        "instruction": "marketing-manager.md"
+      },
+      "workers": [
+        {
+          "role": "ContentCreator",
+          "title": "AIコンテンツクリエイター",
+          "instruction": "content-creator.md"
+        },
+        {
+          "role": "DataAnalyst",
+          "title": "AIデータアナリスト",
+          "instruction": "data-analyst.md"
+        },
+        {
+          "role": "SocialMediaManager",
+          "title": "AIソーシャルメディアマネージャー",
+          "instruction": "social-media-manager.md"
+        }
+      ]
+    },
+    "research": {
+      "name": "研究開発チーム",
+      "description": "研究・分析向けチーム",
+      "leader": {
+        "role": "ResearchDirector",
+        "title": "AI研究所長",
+        "instruction": "research-director.md"
+      },
+      "manager": {
+        "role": "LeadResearcher",
+        "title": "AI主任研究員",
+        "instruction": "lead-researcher.md"
+      },
+      "workers": [
+        {
+          "role": "DataScientist",
+          "title": "AIデータサイエンティスト",
+          "instruction": "data-scientist.md"
+        },
+        {
+          "role": "Researcher",
+          "title": "AI研究員",
+          "instruction": "researcher.md"
+        },
+        {
+          "role": "TechnicalWriter",
+          "title": "AIテクニカルライター",
+          "instruction": "technical-writer.md"
+        }
+      ]
+    },
+    "game-dev": {
+      "name": "ゲーム開発チーム",
+      "description": "ゲーム開発向けチーム",
+      "leader": {
+        "role": "GameProducer",
+        "title": "AIゲームプロデューサー",
+        "instruction": "game-producer.md"
+      },
+      "manager": {
+        "role": "GameDirector",
+        "title": "AIゲームディレクター",
+        "instruction": "game-director.md"
+      },
+      "workers": [
+        {
+          "role": "GameProgrammer",
+          "title": "AIゲームプログラマー",
+          "instruction": "game-programmer.md"
+        },
+        {
+          "role": "GameDesigner",
+          "title": "AIゲームデザイナー",
+          "instruction": "game-designer.md"
+        },
+        {
+          "role": "GameArtist",
+          "title": "AIゲームアーティスト",
+          "instruction": "game-artist.md"
+        }
+      ]
+    },
+    "game-planning": {
+      "name": "ゲーム企画チーム",
+      "description": "ゲーム企画・コンセプト開発向けチーム",
+      "leader": {
+        "role": "ChiefPlanner",
+        "title": "AIチーフプランナー",
+        "instruction": "chief-planner.md"
+      },
+      "manager": {
+        "role": "LeadPlanner",
+        "title": "AIリードプランナー",
+        "instruction": "lead-planner.md"
+      },
+      "workers": [
+        {
+          "role": "GamePlanner",
+          "title": "AIゲームプランナー",
+          "instruction": "game-planner.md"
+        },
+        {
+          "role": "LevelDesigner",
+          "title": "AIレベルデザイナー",
+          "instruction": "level-designer.md"
+        },
+        {
+          "role": "StoryWriter",
+          "title": "AIストーリーライター",
+          "instruction": "story-writer.md"
+        }
+      ]
+    }
+  }
+}

@@ -28,6 +28,13 @@ tmux kill-session -t president 2>/dev/null && log_info "presidentセッション
 mkdir -p ./tmp
 rm -f ./tmp/worker*_done.txt 2>/dev/null && log_info "既存の完了ファイルをクリア" || log_info "完了ファイルは存在しませんでした"
 
+# 成果物ディレクトリ作成
+log_info "デフォルトチームの成果物ディレクトリを作成中..."
+mkdir -p ./outputs/default/projects
+mkdir -p ./outputs/default/docs
+mkdir -p ./outputs/default/tests
+log_info "成果物ディレクトリを作成完了"
+
 log_success "✅ クリーンアップ完了"
 echo ""
 
@@ -51,8 +58,9 @@ PANE_TITLES=("boss1" "worker1" "worker2" "worker3")
 for i in {0..3}; do
     tmux select-pane -t "multiagent:0.$i" -T "${PANE_TITLES[$i]}"
     
-    # 作業ディレクトリ設定
+    # 作業ディレクトリと成果物ディレクトリ設定
     tmux send-keys -t "multiagent:0.$i" "cd $(pwd)" C-m
+    tmux send-keys -t "multiagent:0.$i" "export OUTPUT_DIR=$(pwd)/outputs/default" C-m
     
     # カラープロンプト設定
     if [ $i -eq 0 ]; then
@@ -75,6 +83,7 @@ log_info "👑 presidentセッション作成開始..."
 
 tmux new-session -d -s president
 tmux send-keys -t president "cd $(pwd)" C-m
+tmux send-keys -t president "export OUTPUT_DIR=$(pwd)/outputs/default" C-m
 tmux send-keys -t president "export PS1='(\[\033[1;35m\]PRESIDENT\[\033[0m\]) \[\033[1;32m\]\w\[\033[0m\]\$ '" C-m
 tmux send-keys -t president "echo '=== PRESIDENT セッション ==='" C-m
 tmux send-keys -t president "echo 'プロジェクト統括責任者'" C-m
@@ -106,6 +115,12 @@ echo ""
 echo "  presidentセッション（1ペイン）:"
 echo "    Pane 0: PRESIDENT (プロジェクト統括)"
 
+echo ""
+echo "📁 成果物ディレクトリ:"
+echo "  ./outputs/default/"
+echo "    ├── projects/  # プロジェクト成果物"
+echo "    ├── docs/      # ドキュメント"
+echo "    └── tests/     # テストコード"
 echo ""
 log_success "🎉 Demo環境セットアップ完了！"
 echo ""
