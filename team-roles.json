@@ -63,68 +63,6 @@
         }
       ]
     },
-    "marketing": {
-      "name": "マーケティングチーム",
-      "description": "マーケティング・広告制作向けチーム",
-      "leader": {
-        "role": "CMO",
-        "title": "AIマーケティング責任者",
-        "instruction": "cmo.md"
-      },
-      "manager": {
-        "role": "MarketingManager",
-        "title": "AIマーケティングマネージャー",
-        "instruction": "marketing-manager.md"
-      },
-      "workers": [
-        {
-          "role": "ContentCreator",
-          "title": "AIコンテンツクリエイター",
-          "instruction": "content-creator.md"
-        },
-        {
-          "role": "DataAnalyst",
-          "title": "AIデータアナリスト",
-          "instruction": "data-analyst.md"
-        },
-        {
-          "role": "SocialMediaManager",
-          "title": "AIソーシャルメディアマネージャー",
-          "instruction": "social-media-manager.md"
-        }
-      ]
-    },
-    "research": {
-      "name": "研究開発チーム",
-      "description": "研究・分析向けチーム",
-      "leader": {
-        "role": "ResearchDirector",
-        "title": "AI研究所長",
-        "instruction": "research-director.md"
-      },
-      "manager": {
-        "role": "LeadResearcher",
-        "title": "AI主任研究員",
-        "instruction": "lead-researcher.md"
-      },
-      "workers": [
-        {
-          "role": "DataScientist",
-          "title": "AIデータサイエンティスト",
-          "instruction": "data-scientist.md"
-        },
-        {
-          "role": "Researcher",
-          "title": "AI研究員",
-          "instruction": "researcher.md"
-        },
-        {
-          "role": "TechnicalWriter",
-          "title": "AIテクニカルライター",
-          "instruction": "technical-writer.md"
-        }
-      ]
-    },
     "game-dev": {
       "name": "ゲーム開発チーム",
       "description": "ゲーム開発向けチーム",
@@ -140,19 +78,9 @@
       },
       "workers": [
         {
-          "role": "GameProgrammer",
-          "title": "AIゲームプログラマー",
-          "instruction": "game-programmer.md"
-        },
-        {
-          "role": "GameDesigner",
-          "title": "AIゲームデザイナー",
-          "instruction": "game-designer.md"
-        },
-        {
-          "role": "GameArtist",
-          "title": "AIゲームアーティスト",
-          "instruction": "game-artist.md"
+          "role": "worker",
+          "title": "ゲーム開発担当者",
+          "instruction": "worker.md"
         }
       ]
     },
@@ -165,25 +93,15 @@
         "instruction": "chief-planner.md"
       },
       "manager": {
-        "role": "LeadPlanner",
-        "title": "AIリードプランナー",
-        "instruction": "lead-planner.md"
+        "role": "boss",
+        "title": "企画チームリーダー",
+        "instruction": "boss.md"
       },
       "workers": [
         {
-          "role": "GamePlanner",
-          "title": "AIゲームプランナー",
-          "instruction": "game-planner.md"
-        },
-        {
-          "role": "LevelDesigner",
-          "title": "AIレベルデザイナー",
-          "instruction": "level-designer.md"
-        },
-        {
-          "role": "StoryWriter",
-          "title": "AIストーリーライター",
-          "instruction": "story-writer.md"
+          "role": "worker",
+          "title": "ゲーム企画担当者",
+          "instruction": "worker.md"
         }
       ]
     }

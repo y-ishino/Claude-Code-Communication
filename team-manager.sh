@@ -62,32 +62,36 @@ create_team() {
     fi
     
     if [[ -z "$role_template" ]]; then
-        # デフォルトチーム作成
+        # デフォルトチーム作成（従来形式）
         log_info "チーム${team_num}を作成します（デフォルト開発チーム）..."
         
-        # setup-team.shを実行
-        if [[ -f "./setup-team.sh" ]]; then
-            ./setup-team.sh "$team_num"
+        # 統合版setup.shを実行
+        if [[ -f "./setup.sh" ]]; then
+            ./setup.sh "$team_num"
         else
-            log_error "setup-team.shが見つかりません"
+            log_error "setup.shが見つかりません"
             exit 1
         fi
     else
         # 役割ベースチーム作成
         log_info "チーム${team_num}を作成します（${role_template}チーム）..."
         
-        # setup-role-team.shを実行
-        if [[ -f "./setup-role-team.sh" ]]; then
-            ./setup-role-team.sh "$team_num" "$role_template"
+        # 統合版setup.shを実行
+        if [[ -f "./setup.sh" ]]; then
+            ./setup.sh "$team_num" "$role_template"
         else
-            log_error "setup-role-team.shが見つかりません"
+            log_error "setup.shが見つかりません"
             exit 1
         fi
     fi
     
     # チーム情報を保存
     mkdir -p "./tmp/team${team_num}"
-    echo "$role_template" > "./tmp/team${team_num}/.team_type" 2>/dev/null || echo "default" > "./tmp/team${team_num}/.team_type"
+    if [[ -n "$role_template" ]]; then
+        echo "$role_template" > "./tmp/team${team_num}/.team_type"
+    else
+        echo "default" > "./tmp/team${team_num}/.team_type"
+    fi
 }
 
 # チーム削除
@@ -114,6 +118,7 @@ destroy_team() {
     rm -rf "./logs/team${team_num}" 2>/dev/null && log_info "チーム${team_num}のログディレクトリを削除" || true
     rm -rf "./outputs/team${team_num}" 2>/dev/null && log_info "チーム${team_num}の成果物ディレクトリを削除" || true
     rm -rf "./instructions/team${team_num}" 2>/dev/null && log_info "チーム${team_num}の指示書ディレクトリを削除" || true
+    rm -rf "./team-workspace/team${team_num}" 2>/dev/null && log_info "チーム${team_num}のワークスペースディレクトリを削除" || true
     
     log_success "チーム${team_num}の削除完了"
 }
@@ -267,7 +272,7 @@ start_team() {
         echo ""
         echo "📋 次のステップ:"
         echo "  1. president${team_num}に接続: tmux attach-session -t president${team_num}"
-        echo "  2. 指示を送信: ./agent-send-team.sh president${team_num} \"あなたはpresident${team_num}です。\""
+        echo "  2. 指示を送信: ./agent-send.sh president${team_num} \"あなたはpresident${team_num}です。\""
     else
         # 新形式で起動
         log_info "リーダーセッションでClaude Codeを起動..."
@@ -298,7 +303,7 @@ start_team() {
         echo ""
         echo "📋 次のステップ:"
         echo "  1. リーダーに接続: tmux attach-session -t team${team_num}-leader"
-        echo "  2. 指示を送信: ./agent-send-team.sh ${leader_role}${team_num} \"あなたは${leader_role}${team_num}です。\""
+        echo "  2. 指示を送信: ./agent-send.sh ${leader_role}${team_num} \"あなたは${leader_role}${team_num}です。\""
     fi
 }
 
